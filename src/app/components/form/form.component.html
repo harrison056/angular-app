@@ -1,0 +1,14 @@
+
+<form [formGroup]="myForm">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" placeholder="Nome" formControlName="nome" name="nome">
+    </div>
+
+    <div class="form-group">
+        <label for="tel">Telefone</label>
+        <input type="text" placeholder="Telefone" formControlName="tel" name="tel">
+    </div>
+</form>
+<button mat-button (click)="inserir()">add</button>
+<button mat-button (click)="limpar()">limpar</button>
