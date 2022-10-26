@@ -8,7 +8,8 @@
         
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Telefone</mat-label>
-            <input matInput formControlName="telefone" placeholder="Telefone" >
+            <input matInput type="tel" size="11"
+            maxLength="11" formControlName="telefone" placeholder="Telefone" >
         </mat-form-field>
     </form>
 </div>
@@ -19,6 +20,4 @@
 </div>
 <br>
 
-<div>
-    <app-table [persons]="persons"></app-table>
-</div>
+<app-table [person]="getPersons()"></app-table>

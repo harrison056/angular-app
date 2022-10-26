@@ -10,13 +10,16 @@ import { Person } from 'src/app/model/person';
 })
 export class FormComponent implements OnInit {
 
-  persons: Person[] = [];
+  persons: Person[] = [
+    {nome:'ze', telefone:'222'},
+    {nome:'jo', telefone:'222'}
+  ];
   myForm!: FormGroup;
   
   
   constructor(
     private fb: FormBuilder,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
@@ -28,9 +31,13 @@ export class FormComponent implements OnInit {
   inserir(){
     if(this.myForm.valid){
       this.persons.push(this.myForm.value);
+      this.persons = this.persons.slice();
       this.myForm.reset();
-      console.log(this.persons);
     }
+  }
+
+  getPersons() {
+    return this.persons;
   }
 
   limpar(){

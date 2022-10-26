@@ -1,5 +1,9 @@
+<mat-form-field appearance="standard">
+  <mat-label>Busca</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+</mat-form-field>
 
-<table mat-table [dataSource]="persons" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Nome Column -->
     <ng-container matColumnDef="nome">
