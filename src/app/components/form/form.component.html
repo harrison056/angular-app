@@ -1,14 +1,24 @@
+<br>
+<div>
+    <form [formGroup]="myForm" #formDir="ngForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome" placeholder="Nome" >
+        </mat-form-field>
+        
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Telefone</mat-label>
+            <input matInput formControlName="telefone" placeholder="Telefone" >
+        </mat-form-field>
+    </form>
+</div>
 
-<form [formGroup]="myForm">
-    <div class="form-group">
-        <label for="nome">Nome</label>
-        <input type="text" placeholder="Nome" formControlName="nome" name="nome">
-    </div>
+<div>
+    <button mat-button (click)="inserir()" color="primary">Adicionar</button>
+    <button mat-button (click)="limpar()">Limpar</button>
+</div>
+<br>
 
-    <div class="form-group">
-        <label for="tel">Telefone</label>
-        <input type="text" placeholder="Telefone" formControlName="tel" name="tel">
-    </div>
-</form>
-<button mat-button (click)="inserir()">add</button>
-<button mat-button (click)="limpar()">limpar</button>
+<div>
+    <app-table [persons]="persons"></app-table>
+</div>

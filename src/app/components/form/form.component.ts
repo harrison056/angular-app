@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Person } from 'src/app/model/person';
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -9,27 +10,27 @@ import { Person } from 'src/app/model/person';
 })
 export class FormComponent implements OnInit {
 
-  person: Person[] = [];
-  myForm: any = FormGroup;
+  persons: Person[] = [];
+  myForm!: FormGroup;
   
   
   constructor(
     private fb: FormBuilder,
-  ) { 
-    
-  }
+  ) {}
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
       nome: ['', [Validators.required]],
-      tel: ['', [Validators.required]]
+      telefone: ['', [Validators.required]]
     })
   }
   
   inserir(){
-    this.person.push(this.myForm.value);
-    this.myForm.reset();
-    console.log(this.person);
+    if(this.myForm.valid){
+      this.persons.push(this.myForm.value);
+      this.myForm.reset();
+      console.log(this.persons);
+    }
   }
 
   limpar(){
