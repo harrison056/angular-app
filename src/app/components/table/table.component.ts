@@ -28,5 +28,10 @@ export class TableComponent implements OnChanges {
       this.dataSource = new MatTableDataSource(this.person);
       console.log(personValue)
   }
+  removeData() {
+    this.person = this.person.slice(0, -1);
+    this.dataSource = new MatTableDataSource(this.person);
+    console.log(this.person)
+  }
 
 }

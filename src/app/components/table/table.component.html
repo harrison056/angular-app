@@ -2,7 +2,16 @@
   <mat-label>Busca</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
 </mat-form-field>
-
+<div class="demo-button-container">
+  <button
+      mat-raised-button
+      [disabled]="!person.length"
+      (click)="removeData()"
+      class="demo-button">
+    Remove data
+  </button>
+</div>
+<br>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Nome Column -->
