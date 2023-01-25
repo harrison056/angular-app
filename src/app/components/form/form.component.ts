@@ -11,8 +11,8 @@ import { Person } from 'src/app/model/person';
 export class FormComponent implements OnInit {
 
   persons: Person[] = [
-    {nome:'ze', telefone:'222'},
-    {nome:'jo', telefone:'222'}
+    {nome:'exemplo1', telefone:'11111111111'},
+    {nome:'exemplo2', telefone:'22222222222'}
   ];
   myForm!: FormGroup;
   
